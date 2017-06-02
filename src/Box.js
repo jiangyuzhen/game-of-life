@@ -12,7 +12,7 @@ class Box extends Component {
                                 {
                                     row.map((ceil, key) => {
                                         return (
-                                            <td style={{backgroundColor: '#f5f5f5'}} key={key}></td>
+                                            <td style={{backgroundColor: ceil ? '#42D122' : '#f5f5f5'}} key={key}></td>
                                         )
                                     })
                                 }
