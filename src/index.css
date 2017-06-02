@@ -3,3 +3,64 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+.game_panel{
+    border:solid 1px  #898989;
+    width:845px;
+    height:523px;
+    margin:auto;
+    border-radius: 4px;
+    margin-top:40px;
+    padding:10px;
+    box-shadow: 3px 3px 3px #a9a9a9;
+}
+#game_tablePanel{
+    border:solid 1px  #898989;
+    width:623px;
+    height:503px;
+    border-radius: 4px 0px 0px 4px;
+    padding:8px;
+    float:left;
+    border-right-style: hidden;
+}
+#game_table{
+    width:100%;
+    height:100%;
+}
+#game_table tr td{
+    border:solid 1px #323232;
+    background-color:#f5f5f5;
+    border-radius: 50%;
+    border-style: inherit;
+}
+.game_btnPanel{
+    width: 200px;
+    height: 503px;
+    float: left;
+    border: solid 1px #898989;
+    padding-bottom: 8px;
+    padding-top: 11px;
+    border-radius: 0px 4px 4px 0px;
+    border-left-style: dotted;
+    text-align: center;
+}
+.game_btnPanel h2{
+    text-shadow: 2px 2px 2px gray;
+}
+.game_btnPanel h4{
+    text-shadow: 2px 2px 2px gray;
+    color:#898989;
+}
+.game_btnPanel .game_btns {
+    margin-top: 24px;
+}
+.game_btnPanel .game_btns button {
+    width: 80%;
+    margin: 10px;
+    height: 40px;
+    background-color: #fff;
+    border: solid 1px #787878;
+    border-radius: 4px;
+    font-size: 16px;
+    border-style: dotted;
+} 
+
