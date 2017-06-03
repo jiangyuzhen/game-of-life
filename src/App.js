@@ -48,7 +48,6 @@ class App extends Component {
             return 0;
         });
     });
-    console.log(new_state)
     this.setState({data: new_state});
     this.setState({year: 0});
     this.setState({editStatus: true});

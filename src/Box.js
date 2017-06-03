@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 class Box extends Component {
   render() {
-      console.log(this.props.data)
     return (
         <div id="game_tablePanel">
             <table id="game_table">
