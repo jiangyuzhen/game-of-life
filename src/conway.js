@@ -1,3 +1,19 @@
+const getInitialState = () => {
+    let initState = [];
+    for(let i = 0; i < 480/15; i++){
+      let arr = [];
+      for(let j = 0; j < 600/15; j++){
+         if(parseInt(Math.random()*100)%13==0){
+            arr.push(1);
+         }else{
+            arr.push(0);
+         }
+       }
+       initState.push(arr);
+    }
+    return initState;
+  }
+
 const gotoNextGeneration = (grid) => {
     return grid.map((row, rowIndex) => {
         return row.map((cell, colIndex) => {
@@ -26,5 +42,6 @@ const withinIndex = (rowIndex, colIndex, grid) => {
 };
 
 module.exports = {
+    getInitialState,
     gotoNextGeneration
 };
