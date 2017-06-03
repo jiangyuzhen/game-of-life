@@ -9,7 +9,8 @@ class App extends Component {
     super(props, context);
     this.state = {
       data: getInitialState(),
-      year: 0
+      year: 0,
+      editStatus: false
     }
   }
 
@@ -34,6 +35,7 @@ class App extends Component {
   // 时间流动
   run() {
     clearInterval(this.Timer);
+    this.setState({editStatus: false});
     this.start();
   }
 
@@ -46,8 +48,10 @@ class App extends Component {
             return 0;
         });
     });
+    console.log(new_state)
     this.setState({data: new_state});
     this.setState({year: 0});
+    this.setState({editStatus: true});
   }
 
   changeTimer(time=1000) {
@@ -59,10 +63,18 @@ class App extends Component {
     },time);
   }
 
+  handleClick(x, y) {
+    if(this.state.editStatus){
+      let new_state = this.state.data;
+      new_state[x][y] = new_state[x][y] ? 0 : 1;
+      this.setState({data: new_state});
+    } 
+  }
+
   render() {
     return (
       <div className="game_panel">
-          <Box data={this.state.data} />
+          <Box data={this.state.data} handleClick={(x, y) => this.handleClick(x, y)} />
           <div className="game_btnPanel">
             <Time year={this.state.year} />
             <BtnPanel stop={this.stop.bind(this)} 

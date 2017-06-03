@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 class Box extends Component {
   render() {
+      console.log(this.props.data)
     return (
         <div id="game_tablePanel">
             <table id="game_table">
@@ -9,11 +10,11 @@ class Box extends Component {
                 {
                     this.props.data.map((row, index) => {
                         return (
-                            <tr key={index}>
+                            <tr key={`tr-${index}`}>
                                 {
                                     row.map((ceil, key) => {
                                         return (
-                                            <td style={{backgroundColor: ceil ? '#42D122' : '#f5f5f5'}} key={key}></td>
+                                            <td onClick={() => this.props.handleClick(index, key)} style={{backgroundColor: ceil ? '#42D122' : '#f5f5f5'}} key={`tr-${key}`}></td>
                                         )
                                     })
                                 }
