@@ -5,6 +5,7 @@ class Box extends Component {
     return (
         <div id="game_tablePanel">
             <table id="game_table">
+                <tbody>
                 {
                     this.props.data.map((row, index) => {
                         return (
@@ -12,7 +13,7 @@ class Box extends Component {
                                 {
                                     row.map((ceil, key) => {
                                         return (
-                                            <td style={{backgroundColor: '#f5f5f5'}} key={key}></td>
+                                            <td style={{backgroundColor: ceil ? '#42D122' : '#f5f5f5'}} key={key}></td>
                                         )
                                     })
                                 }
@@ -20,6 +21,7 @@ class Box extends Component {
                         )
                     })
                 }
+                </tbody>
             </table>
         </div>
     );

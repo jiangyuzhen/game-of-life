@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Box from './Box';
 import Time from './Time';
-import BtnPanel from './BtnPanel';   
+import BtnPanel from './BtnPanel';
+import { gotoNextGeneration } from './conway';   
 
 class App extends Component {
   constructor(props, context) {
@@ -28,13 +29,21 @@ class App extends Component {
     return initState;
   }
 
+  componentDidMount() {
+     let _self = this;
+     let count = 0;
+     this.Timer = setInterval(function(){
+        _self.setState({data: gotoNextGeneration(_self.state.data)});
+        _self.setState({year: ++count});
+     },1000);
+  }
+
   render() {
-    console.log(this.state)
     return (
       <div className="game_panel">
           <Box data={this.state.data} />
           <div className="game_btnPanel">
-            <Time year='0' />
+            <Time year={this.state.year} />
             <BtnPanel />
             <h4>Game of Life</h4>
           </div>
