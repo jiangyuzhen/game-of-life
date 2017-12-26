@@ -10,3 +10,5 @@
 #### Step 2: 加入数据变化算法 分支名：step02
 
 #### Step 3: 加入事件控制 分支名：step03
+
+备注：**conway.js** 文件由@Waterstrong提供
